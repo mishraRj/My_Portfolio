@@ -12,7 +12,6 @@ const ThemeToggle = () => {
       setIsDarkMode(false);
       document.documentElement.classList.remove("dark");
     } else {
-      // agar dark hai ya null hai to default dark
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -39,9 +38,9 @@ const ThemeToggle = () => {
         "focus:outline-hidden"
       )}>
       {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
+        <Sun className="h-6 w-6 text-yellow-300 casual-btn" />
       ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
+        <Moon className="h-6 w-6 text-blue-900 casual-btn" />
       )}
     </button>
   );
