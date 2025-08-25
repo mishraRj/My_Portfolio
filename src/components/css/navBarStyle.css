@@ -1,0 +1,272 @@
+.nav-bar {
+  position: fixed;
+  height: 100vh;
+  width: 100px; /* Initial width */
+  background-color: rgba(0, 0, 0, 0.333); /* Initial transparency */
+  transition: width 0.5s ease-in-out, background-color 0.5s ease; /* Smooth transition */
+  overflow: hidden;
+  top: 10px;
+  z-index: 5000; /* To appear on top of the main content */
+  box-shadow: none; /* Initially no shadow */
+  border: none;
+}
+
+#check {
+  display: none;
+}
+
+.btn_one i {
+  display: none;
+}
+
+.nav-bar:hover {
+  width: 185px; /* Expand width on hover */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.922
+  ); /* Slightly less transparent on hover */
+  box-shadow: 0 0 100px rgb(0, 0, 0),
+    /* Close, stronger shadow */ 0 0 300px rgba(0, 0, 0, 0.927),
+    /* Mid-range, fading shadow */ 0 0 600px rgba(0, 0, 0, 0.856),
+    /* Farther, slightly weaker shadow */ 0 0 1000px rgba(0, 0, 0, 0.753),
+    0 0 2000px rgba(0, 0, 0, 0.696); /* Even farther, still visible */
+}
+
+.branding {
+  width: 100%;
+  height: 80px; /* Adjust height */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 2px 0px 4px white;
+}
+
+.branding .btn_two i {
+  position: absolute;
+  left: 167px;
+  top: 6px;
+  font-size: 20px;
+  color: gray;
+  opacity: 0;
+  transition: 0.5s linear;
+  cursor: pointer;
+}
+
+.branding h3 {
+  font-size: 18px;
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #8a2be2,
+    0 0 40px #8a2be2;
+  animation: glow-text 1s infinite alternate;
+}
+
+.nav-bar .menu ul {
+  list-style: none; /* To Remove all styling from list e.g., bullet points etc*/
+  padding-left: 0;
+  margin-top: 20px; /* Space below subscription */
+}
+
+.nav-bar .menu li img {
+  margin-right: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-bar .menu li {
+  margin-top: 20px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+  transition: all 0.9s ease;
+  background: none; /* Ensure no background color */
+}
+
+.nav-bar .menu li i {
+  color: white;
+  font-size: 25px;
+  margin-right: 10px;
+  min-width: 30px; /* Ensure enough space for the icons */
+  text-align: center; /* Center the icons */
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.pfp img {
+  border-radius: 50%;
+}
+
+.nav-bar .menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  white-space: nowrap;
+  display: none;
+  transition: all 0.9s ease;
+  opacity: 0.6;
+  text-shadow: 0 0 10px #ff69b4, 0 0 30px #8a2be2;
+  animation: glow-text 2s infinite alternate;
+}
+
+@keyframes glow-text {
+  0% {
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #8a2be2;
+  }
+
+  100% {
+    text-shadow: 0 0 20px #8a2be2, 0 0 30px #ff69b4;
+  }
+}
+
+.nav-bar:hover .menu a {
+  display: inline-block;
+}
+.nav-bar .menu li:hover a {
+  opacity: 1;
+  font-size: 22px;
+}
+
+.nav-bar .menu li:hover i {
+  color: white; /* Change color on hover */
+  opacity: 1;
+  font-size: 30px;
+  filter: brightness(3); /* Brighten the icon */
+  /* Add glow effect */
+}
+
+@media (min-width: 654px) and (max-width: 754px) {
+  .nav-bar {
+    position: fixed;
+    left: -300px;
+    height: 100vh;
+    width: 190px; /* Initial width */
+    transition: left 1s linear, background-color 0.5s ease; /* Smooth transition */
+  }
+
+  .nav-bar .menu a {
+    display: inline-block;
+  }
+
+  .nav-bar:hover .menu a {
+    display: inline-block;
+  }
+
+  .btn_one i {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 70px;
+    transition: 0.5s linear;
+    z-index: 1000;
+    display: block;
+  }
+
+  #check {
+    display: none;
+  }
+
+  .branding .btn_two i {
+    position: absolute;
+    right: 0px;
+    top: 6px;
+    font-size: 20px;
+    color: gray;
+    opacity: 0;
+    transition: 0.5s linear;
+    cursor: pointer;
+  }
+
+  .btn_one i:hover {
+    font-size: 40px;
+  }
+
+  #check:checked ~ .nav-bar {
+    left: 0; /* Move navbar into view when checkbox is checked */
+    transition: left 1s ease-out;
+  }
+
+  #check:checked ~ .btn_one i {
+    opacity: 0;
+  }
+
+  #check:checked ~ .nav-bar .btn_two i {
+    opacity: 1;
+    transition: 1s;
+  }
+}
+
+@media (max-width: 654px) {
+  .nav-bar {
+    position: fixed;
+    left: -300px;
+    height: 100vh;
+    width: 220px; /* Initial width */
+    transition: left 0.6s linear, background-color 0.5s ease; /* Smooth transition */
+  }
+
+  .nav-bar .menu a {
+    display: inline-block;
+    text-shadow: none; /* Disable glowing effect */
+    animation: none; /* Remove any animation on text */
+  }
+
+  .nav-bar:hover .menu a {
+    display: inline-block;
+  }
+
+  .btn_one i {
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 70px;
+    transition: 0.5s linear;
+    z-index: 1000;
+    display: block;
+  }
+
+  #check {
+    display: none;
+  }
+
+  .branding h3 {
+    text-shadow: none;
+    animation: none;
+  }
+
+  .branding .btn_two i {
+    position: absolute;
+    right: 0px;
+    top: 6px;
+    font-size: 20px;
+    color: gray;
+    opacity: 0;
+    transition: 0.5s linear;
+    cursor: pointer;
+  }
+
+  .btn_one i:hover {
+    font-size: 40px;
+  }
+
+  #check:checked ~ .nav-bar {
+    left: 0; /* Move navbar into view when checkbox is checked */
+    transition: left 1s ease-out;
+  }
+
+  #check:checked ~ .btn_one i {
+    opacity: 0;
+  }
+
+  #check:checked ~ .nav-bar .btn_two i {
+    opacity: 1;
+    transition: 1s;
+  }
+}
