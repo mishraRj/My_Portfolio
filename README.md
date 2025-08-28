@@ -23,7 +23,7 @@ Showcases skills, projects, and achievements in a creative and professional way.
 ## 📸 Screenshots
 | Hero Section | Skills Section | Projects Section |
 |--------------|----------------|------------------|
-| ![Hero](screenshots/heroSection.png) | ![Skills](screenshots/skills.png) | ![Projects](screenshots/projectsSection.png) |
+| ![Hero](screenshots/HeroSection.png) | ![Skills](screenshots/skills.png) | ![Projects](screenshots/projectsSection.png) |
 
 *(Add screenshots of your portfolio UI in the `screenshots/` folder and update the paths accordingly)*  
 
