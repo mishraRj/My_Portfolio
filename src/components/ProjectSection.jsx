@@ -3,6 +3,34 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
+    title: "RJTV Universe- A Full-Stack OTT Platform",
+    description:
+      "A full-stack OTT streaming platform that allows users to browse, watch, and manage movies/shows. Features include user authentication, video streaming, and responsive UI built with MERN stack.",
+    image: "/projects/Project2.png",
+    tags: ["HTML/CSS", "JavaScript", "MongoDB", "Express", "NodeJS"],
+    demoUrl: "https://rjtv-universe.onrender.com",
+    githubUrl: "https://github.com/mishraRj/RJTV-Universe.git",
+  },
+  {
+    id: 2,
+    title: "Full Stack Version Control System",
+    description:
+      "A full-stack GitHub-inspired VCS platform built with MERN stack. Supports repository/file management, custom CLI commands (init, commit, push, pull), JWT auth, real-time activity feed (Socket.io), issue tracking, starring, and Cloudinary image uploads.",
+    image: "/projects/githubProject.png", // Use your dashboard screenshot here
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.io",
+      "JWT",
+      "Cloudinary",
+    ],
+    demoUrl: "https://version-control-systemrj.onrender.com/",
+    githubUrl: "https://github.com/mishraRj/Version-Control-System",
+  },
+  {
+    id: 3,
     title: "Vacation Rental Booking Platform",
     description:
       "A full-stack web application for short-term rental listings and bookings.",
@@ -13,14 +41,14 @@ const projects = [
       "https://github.com/mishraRj/Vacation-Rental-Booking-Platform.git",
   },
   {
-    id: 2,
-    title: "RJTV Universe-Full-Stack OTT Streaming Platform",
+    id: 4,
+    title: "Recipe Planet - Full Stack Mini Project",
     description:
-      "A full-stack OTT streaming platform that allows users to browse, watch, and manage movies/shows. Features include user authentication, video streaming, and responsive UI built with MERN stack.",
-    image: "/projects/Project2.png",
-    tags: ["HTML/CSS", "JavaScript", "MongoDB", "Express", "NodeJS"],
-    demoUrl: "https://rjtv-universe.onrender.com",
-    githubUrl: "https://github.com/mishraRj/RJTV-Universe.git",
+      "A simple MERN app for managing recipes with basic CRUD operations, REST API, and clean React+Vanilla CSS UI. Users can add, view, update, and delete recipes easily.",
+    image: "/projects/recipePlanet.png", // Use relevant screenshot here
+    tags: ["React", "Node.js", "Express", "MongoDB", "CSS"],
+    demoUrl: "https://full-stack-recipe-maker.vercel.app/",
+    githubUrl: "https://github.com/mishraRj/full-stack-recipe-maker",
   },
 ];
 
