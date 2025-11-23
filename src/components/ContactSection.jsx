@@ -11,6 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -18,17 +19,40 @@ const ContactSection = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    const form = e.target;
+
+    const templateParams = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setIsSubmitting(false);
+        form.reset();
+      })
+      .catch(() => {
+        toast({
+          title: "Error",
+          description: "Failed to send your message. Please try again.",
+        });
+        setIsSubmitting(false);
       });
-      setIsSubmitting(false);
-    }, 1500);
   };
+
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -108,7 +132,7 @@ const ContactSection = () => {
             onSubmit={handleSubmit}>
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -160,8 +184,8 @@ const ContactSection = () => {
               </div>
 
               <button
-                type="submit"
                 disabled={isSubmitting}
+                type="submit"
                 className={cn(
                   "cosmic-button w-full flex items-center justify-center gap-2"
                 )}>
