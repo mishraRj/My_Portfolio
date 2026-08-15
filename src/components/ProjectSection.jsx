@@ -13,10 +13,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "Full Stack Version Control System",
+    title: "CodeVault - A Full Stack Version Control System",
     description:
       "A full-stack GitHub-inspired VCS platform built with MERN stack. Supports repository/file management, custom CLI commands (init, commit, push, pull), JWT auth, real-time activity feed (Socket.io), issue tracking, starring, and Cloudinary image uploads.",
-    image: "/projects/githubProject.png", // Use your dashboard screenshot here
+    image: "/projects/codeVault.png", // Use your dashboard screenshot here
     tags: [
       "React",
       "Node.js",
