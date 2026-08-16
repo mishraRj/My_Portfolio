@@ -1,5 +1,5 @@
 import "./css/navBarStyle.css";
-import profilePic from "../assets/me.webp";
+import profilePic from "../assets/me2.webp";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +36,7 @@ const NavBar = () => {
           "fixed w-full transition-all duration-300 nav-bar",
           isScrolled
             ? "py-0 bg-background/80 backdrop-blur-md shadow-xs"
-            : "py-0"
+            : "py-0",
         )}>
         <div className="branding">
           <h3>Navigate</h3>
