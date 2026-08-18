@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { ArrowDown } from "lucide-react";
-import profilePic from "../assets/me2.webp";
+import profilePic from "../assets/me.webp";
 import projector from "../assets/SpaceSHips/newAlienProjector.png";
 import alienAudio from "../assets/alien-voice.mp3";
 import "./css/style.css";

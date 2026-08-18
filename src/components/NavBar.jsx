@@ -1,5 +1,5 @@
 import "./css/navBarStyle.css";
-import profilePic from "../assets/me2.webp";
+import profilePic from "../assets/me.webp";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
